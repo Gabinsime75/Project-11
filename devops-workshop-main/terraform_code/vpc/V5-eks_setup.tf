@@ -1,9 +1,18 @@
+terraform {
+  required_providers {
+    aws = {
+      source = "hashicorp/aws"
+      version = "~> 4.0"
+    }
+  }
+}
+
 provider "aws" {
   region = "us-east-1"
 }
 
 resource "aws_instance" "demo-server" {
-    ami = "ami-053b0d53c279acc90"
+    ami = "ami-0fc5d935ebf8bc3bc"
     instance_type = "t2.micro"
     key_name = "dpp"
     //security_groups = [ "demo-sg" ]
